@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "foot-players-history"
+version = "0.1.0"
+description = ""
+authors = ["Trifa01 <ahmed.trifa1@gmail.com>"]
+readme = "README.md"
+packages = [{include = "foot_players_history"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+Wikipedia-API = "^0.6.0"
+pandas = "^2.0.3"
+bs4 = "^0.0.1"
+lxml = "^4.9.3"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
