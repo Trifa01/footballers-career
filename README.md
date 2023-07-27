@@ -2,7 +2,7 @@
 Guess the player based on his club career
 
 ## Try the Quiz
-All you need to do is download the Excel file [foot_career_quiz](./foot_career_quiz.xlsx)
+All you need to do is download the Excel file [foot_career_quiz]([./foot_career_quiz.xlsx](https://github.com/Trifa01/footballers-career/blob/b144f571e6aaf564e85477585432e11e21b1efe1/foot_career_quiz.xlsx))
 
 ## How to play ?
 1. Press **F9** to load a career
@@ -22,6 +22,3 @@ I am using
     - I get the Wiki page 
     - Parse the section "Club Career"
 3. Put it all together in a dataframe with other infos like Position and the birth year   
-
-
-# 
