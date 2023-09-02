@@ -35,11 +35,12 @@ big_df["first_name"] = big_df["player"].apply(lambda x:" ".join(str(x).split(" "
 big_df['flashscore_url'] = big_df['flashscore_url'].str.replace('/', '___SLASH___')
 
 
-all_df = (big_df[["first_name","last_name", "position", "flashscore_url", "seasons", "teams", "transfers", "logos"]]
+all_df = (big_df[["first_name","last_name", "position", "nationality", "photo", "flashscore_url", "seasons", "teams", "transfers", "logos"]]
           .explode(["seasons", "teams", "transfers", "logos"])
           )
 
 all_df['logos'] = all_df['logos'].str.replace('/', '___SLASH___')
+all_df['photo'] = all_df['photo'].str.replace('/', '___SLASH___')
 
 all_df = all_df[~all_df.teams.isnull()]
 
@@ -47,7 +48,7 @@ all_df["seasons"] = all_df.apply(lambda x:(str(x['seasons'][0]).split(".")[-1], 
 
 all_df["teams"] = all_df.apply(lambda x:{"name":x["teams"], "season":x["seasons"], "transfer":x["transfers"], "logo":x["logos"]}, axis=1)
 
-final_df = all_df.groupby(["first_name","last_name", "position","flashscore_url"])["teams"].apply(list).reset_index()
+final_df = all_df.groupby(["first_name","last_name", "position", "nationality", "photo", "flashscore_url"])["teams"].apply(list).reset_index()
 
 json_output = final_df.to_json(orient="records", indent=1, force_ascii=False)
 
