@@ -1,5 +1,39 @@
-# Football career Quiz with Excel
+# Football career scraper
 Guess the player based on his club career
+
+## Execute scraper
+
+### Prerequisites
+- Python 3.11 (to use another version you should modify the .toml or execute a `poetry init`)
+
+### Steps
+1. Create a virtual environment
+```
+python3.11 -m venv .venv
+```
+
+1. Activate the virtual environment
+
+```
+source .venv/bin/activate
+```
+
+3. Install dependencies
+```
+poetry install
+```
+
+4. Run scraper and cleaning code
+```
+python3 flashscore2.py
+```
+Returns `players.csv`
+```
+python3 clean.py
+```
+Returns `players.json`
+
+
 
 ## Try the Quiz
 All you need to do is download the Excel file [foot_career_quiz]([./foot_career_quiz.xlsx](https://github.com/Trifa01/footballers-career/blob/b144f571e6aaf564e85477585432e11e21b1efe1/foot_career_quiz.xlsx))
